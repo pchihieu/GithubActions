@@ -27,3 +27,91 @@ public class Addition
 		Assert.ThrowsException<ArgumentNullException>(() => Program.Add(null, null));
 	}
 }
+
+[TestClass]
+public class Subtraction
+{
+	[TestMethod]
+	public void Subtract_Valid_Patino()
+	{
+		Assert.AreEqual(5, Program.Subtract("10", "5"));
+	}
+
+	[TestMethod]
+	public void Subtract_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Subtract("a", "5"));
+	}
+
+	[TestMethod]
+	public void Subtract_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Subtract(null, "5"));
+	}
+}
+
+[TestClass]
+public class Multiplication
+{
+	[TestMethod]
+	public void Multiply_Valid_Patino()
+	{
+		Assert.AreEqual(10, Program.Multiply("2", "5"));
+	}
+
+	[TestMethod]
+	public void Multiply_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Multiply("2", "b"));
+	}
+
+	[TestMethod]
+	public void Multiply_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Multiply("2", null));
+	}
+}
+
+[TestClass]
+public class Division
+{
+	[TestMethod]
+	public void Divide_Valid_Patino()
+	{
+		Assert.AreEqual(2, Program.Divide("10", "5"));
+	}
+
+	[TestMethod]
+	public void Divide_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Divide("10", "x"));
+	}
+
+	[TestMethod]
+	public void Divide_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Divide(null, "5"));
+	}
+}
+
+[TestClass]
+public class Powering
+{
+	[TestMethod]
+	public void Power_Valid_Patino()
+	{
+		Assert.AreEqual(8, Program.Power("2", "3"));
+	}
+
+	[TestMethod]
+	public void Power_Invalid_Patino()
+	{
+		Assert.ThrowsException<FormatException>(() => Program.Power("2", "y"));
+	}
+
+	[TestMethod]
+	public void Power_Null_Patino()
+	{
+		Assert.ThrowsException<ArgumentNullException>(() => Program.Power("2", null));
+	}
+}
